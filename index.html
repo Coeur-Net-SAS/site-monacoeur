@@ -3,31 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Ancœur — Site en construction</title>
-<meta name="description" content="Le site monacoeur.fr est en cours de construction. Revenez bientôt !">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+<title>Monacœur — Site en construction</title>
+<meta name="description" content="Monacœur, filiale monégasque de Coeur-Net. Authentification biométrique par le cœur. Site en cours de construction.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%93</text></svg>">
 <style>
   :root {
-    --bg-start: #fdf2f4;
-    --bg-end: #fbe4e9;
-    --ink: #3a2a2e;
-    --ink-soft: #6b5459;
-    --accent: #c9506a;
-    --accent-dark: #a13a52;
-    --card-bg: rgba(255, 255, 255, 0.6);
-    --border: rgba(201, 80, 106, 0.18);
+    --bg: #060b0d;
+    --bg-panel: rgba(255, 255, 255, 0.03);
+    --border: rgba(0, 246, 255, 0.22);
+    --ink: #eaf7f8;
+    --ink-soft: #9db3b6;
+    --accent: #00f6ff;
+    --accent-dim: #0aa9b0;
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: light) {
     :root {
-      --bg-start: #241417;
-      --bg-end: #1a0f12;
-      --ink: #f3e6e8;
-      --ink-soft: #c7aab0;
-      --accent: #e8829a;
-      --accent-dark: #f0a5b7;
-      --card-bg: rgba(255, 255, 255, 0.04);
-      --border: rgba(232, 130, 154, 0.25);
+      --bg: #f3fbfc;
+      --bg-panel: rgba(0, 20, 22, 0.03);
+      --border: rgba(0, 170, 180, 0.25);
+      --ink: #0a1a1c;
+      --ink-soft: #4c6266;
+      --accent: #00a7b0;
+      --accent-dim: #007a82;
     }
   }
 
@@ -44,58 +42,79 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     color: var(--ink);
-    background: radial-gradient(circle at 50% 20%, var(--bg-end), var(--bg-start) 70%);
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0, 246, 255, 0.08), transparent 55%),
+      var(--bg);
     padding: 24px;
     overflow-x: hidden;
   }
 
   .card {
-    max-width: 560px;
+    max-width: 580px;
     width: 100%;
     text-align: center;
     padding: 56px 40px;
-    background: var(--card-bg);
+    background: var(--bg-panel);
     border: 1px solid var(--border);
-    border-radius: 24px;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 20px 60px rgba(161, 58, 82, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 30px 80px rgba(0, 246, 255, 0.06);
   }
 
-  .heart {
-    font-size: 2.5rem;
-    display: inline-block;
-    animation: beat 1.8s ease-in-out infinite;
-    margin-bottom: 8px;
+  .pulse-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
-  @keyframes beat {
-    0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.15); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.1); }
-    60% { transform: scale(1); }
+  svg.pulse {
+    width: 220px;
+    height: 60px;
+    overflow: visible;
   }
 
-  h1 {
-    font-size: clamp(1.8rem, 5vw, 2.4rem);
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    margin: 0 0 12px;
-    color: var(--accent-dark);
+  .pulse-line {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 2.6s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(0, 246, 255, 0.55));
+  }
+
+  @keyframes draw {
+    0% { stroke-dashoffset: 300; }
+    55% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -300; }
+  }
+
+  .brand {
+    font-size: clamp(1.9rem, 5vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+
+  .brand span {
+    color: var(--accent);
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--ink-soft);
+    letter-spacing: 0.22em;
+    color: var(--accent-dim);
     margin: 0 0 32px;
+    font-weight: 600;
   }
 
   p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: var(--ink-soft);
     margin: 0 0 8px;
@@ -103,46 +122,55 @@
 
   .divider {
     width: 48px;
-    height: 2px;
-    background: var(--accent);
-    opacity: 0.5;
+    height: 1px;
+    background: var(--border);
     margin: 28px auto;
-    border-radius: 2px;
   }
 
-  a.contact {
-    color: var(--accent-dark);
+  .affiliation {
+    font-size: 0.9rem;
+  }
+
+  a {
+    color: var(--accent);
     text-decoration: none;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     transition: opacity 0.2s ease;
   }
 
-  a.contact:hover {
-    opacity: 0.7;
+  a:hover {
+    opacity: 0.75;
   }
 
   footer {
     margin-top: 32px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--ink-soft);
-    opacity: 0.7;
+    opacity: 0.6;
+    letter-spacing: 0.04em;
   }
 </style>
 </head>
 <body>
   <main class="card">
-    <div class="heart" aria-hidden="true">❤️</div>
-    <h1>Mon Ancœur</h1>
+    <div class="pulse-wrap" aria-hidden="true">
+      <svg class="pulse" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+        <path class="pulse-line" d="M0,30 L50,30 L65,10 L80,50 L95,20 L110,30 L145,30 L155,15 L165,30 L220,30" />
+      </svg>
+    </div>
+    <h1 class="brand">Mona<span>cœur</span></h1>
     <p class="subtitle">Site en construction</p>
-    <p>Nous préparons quelque chose avec soin.</p>
-    <p>Ce site sera bientôt disponible — merci de votre patience.</p>
+    <p>Authentification biométrique par le cœur.</p>
+    <p>Nous préparons le lancement — revenez bientôt.</p>
     <div class="divider"></div>
-    <p>
-      Pour toute question, contactez-nous à<br>
-      <a class="contact" href="mailto:contact@monacoeur.fr">contact@monacoeur.fr</a>
+    <p class="affiliation">
+      Filiale monégasque de <a href="https://www.coeur-net.fr" target="_blank" rel="noopener">Coeur-Net</a>
     </p>
-    <footer>&copy; 2026 Mon Ancœur</footer>
+    <p>
+      <a href="mailto:contact@monacoeur.fr">contact@monacoeur.fr</a>
+    </p>
+    <footer>&copy; 2026 Monacœur — Coeur-Net</footer>
   </main>
 </body>
 </html>
