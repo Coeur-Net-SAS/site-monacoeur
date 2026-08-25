@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Monacœur — Site en construction</title>
-<meta name="description" content="Monacœur, filiale monégasque de Coeur-Net. Authentification biométrique par le cœur. Site en cours de construction.">
+<meta name="description" content="Monacœur — authentification biométrique par le cœur. Site en cours de construction.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%93</text></svg>">
 <style>
   :root {
-    --bg: #060b0d;
-    --bg-panel: rgba(255, 255, 255, 0.03);
-    --border: rgba(0, 246, 255, 0.22);
-    --ink: #eaf7f8;
-    --ink-soft: #9db3b6;
-    --accent: #00f6ff;
-    --accent-dim: #0aa9b0;
+    --bg: #ffffff;
+    --bg-panel: #ffffff;
+    --border: rgba(206, 17, 38, 0.18);
+    --ink: #1a1a1a;
+    --ink-soft: #6b6b6b;
+    --accent: #ce1126;
+    --accent-dim: #a30d1e;
   }
 
-  @media (prefers-color-scheme: light) {
+  @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #f3fbfc;
-      --bg-panel: rgba(0, 20, 22, 0.03);
-      --border: rgba(0, 170, 180, 0.25);
-      --ink: #0a1a1c;
-      --ink-soft: #4c6266;
-      --accent: #00a7b0;
-      --accent-dim: #007a82;
+      --bg: #120303;
+      --bg-panel: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 60, 80, 0.25);
+      --ink: #fbeaea;
+      --ink-soft: #c9a5a5;
+      --accent: #ff3b4e;
+      --accent-dim: #ff6b7a;
     }
   }
 
@@ -45,7 +45,7 @@
     font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     color: var(--ink);
     background:
-      radial-gradient(circle at 50% 0%, rgba(0, 246, 255, 0.08), transparent 55%),
+      radial-gradient(circle at 50% 0%, rgba(206, 17, 38, 0.06), transparent 55%),
       var(--bg);
     padding: 24px;
     overflow-x: hidden;
@@ -59,7 +59,7 @@
     background: var(--bg-panel);
     border: 1px solid var(--border);
     border-radius: 16px;
-    box-shadow: 0 30px 80px rgba(0, 246, 255, 0.06);
+    box-shadow: 0 30px 80px rgba(206, 17, 38, 0.07);
   }
 
   .pulse-wrap {
@@ -83,7 +83,7 @@
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
     animation: draw 2.6s ease-in-out infinite;
-    filter: drop-shadow(0 0 6px rgba(0, 246, 255, 0.55));
+    filter: drop-shadow(0 0 6px rgba(206, 17, 38, 0.35));
   }
 
   @keyframes draw {
@@ -127,10 +127,6 @@
     margin: 28px auto;
   }
 
-  .affiliation {
-    font-size: 0.9rem;
-  }
-
   a {
     color: var(--accent);
     text-decoration: none;
@@ -164,13 +160,10 @@
     <p>Authentification biométrique par le cœur.</p>
     <p>Nous préparons le lancement — revenez bientôt.</p>
     <div class="divider"></div>
-    <p class="affiliation">
-      Filiale monégasque de <a href="https://www.coeur-net.fr" target="_blank" rel="noopener">Coeur-Net</a>
-    </p>
     <p>
-      <a href="mailto:contact@monacoeur.fr">contact@monacoeur.fr</a>
+      <a href="mailto:administratif@monacoeur.mc">administratif@monacoeur.mc</a>
     </p>
-    <footer>&copy; 2026 Monacœur — Coeur-Net</footer>
+    <footer>&copy; 2026 Monacœur</footer>
   </main>
 </body>
 </html>

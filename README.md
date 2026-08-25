@@ -1,6 +1,6 @@
 # site_monacoeur
 
-Page "en construction" pour **monacoeur.fr** — filiale monégasque de [Coeur-Net](https://www.coeur-net.fr) (authentification biométrique par le cœur). Hébergée sur GitHub Pages.
+Page "en construction" pour **monacoeur.fr** — authentification biométrique par le cœur. Hébergée sur GitHub Pages.
 
 ## Déploiement sur GitHub Pages
 
